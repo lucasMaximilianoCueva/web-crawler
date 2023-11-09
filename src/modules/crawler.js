@@ -37,9 +37,7 @@ class Crawler {
 
       fs.appendFileSync(this.dbFilePath, JSON.stringify(result) + "\n");
 
-      console.log(`Title: ${data.title}`);
-      console.log(`H1: ${h1}`);
-      console.log(`URL: ${url}`);
+      console.log(`Title: ${data.title} \nH1: ${h1}  \nURL: ${url}`);
 
       const promises = [];
 
@@ -57,7 +55,7 @@ class Crawler {
 
       await Promise.all(promises);
     } catch (error) {
-      console.error(`Error crawling ${url}: ${error.message}`);
+      console.error(`Error crawling '${url}': ${error.message}`);
     }
   }
 }
