@@ -1,4 +1,3 @@
-// cli.js
 const yargs = require("yargs");
 
 class CLI {

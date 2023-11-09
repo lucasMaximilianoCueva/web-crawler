@@ -1,4 +1,3 @@
-// index.js
 const Crawler = require("./src/modules/crawler");
 const CLI = require("./src/modules/cli");
 
