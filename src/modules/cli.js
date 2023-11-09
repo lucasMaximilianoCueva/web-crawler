@@ -1,19 +1,19 @@
 const yargs = require("yargs");
 
-class CLI {
+class CommandLineInterface {
   constructor() {
-    this.argv = yargs
+    this.commandLineArguments = yargs
       .option("url", {
         describe: "Initial URL to start crawling from",
         demandOption: true,
         type: "string",
       })
-      .option("maxdist", {
+      .option("maxDepth", {
         describe: "Maximum distance from the initial website",
         demandOption: true,
         type: "number",
       })
-      .option("db", {
+      .option("databaseFile", {
         describe: "Database file to save results",
         demandOption: true,
         type: "string",
@@ -21,8 +21,8 @@ class CLI {
   }
 
   getArguments() {
-    return this.argv;
+    return this.commandLineArguments;
   }
 }
 
-module.exports = CLI;
+module.exports = CommandLineInterface;

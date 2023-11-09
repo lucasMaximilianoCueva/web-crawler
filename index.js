@@ -1,10 +1,10 @@
-const Crawler = require("./src/modules/crawler");
-const CLI = require("./src/modules/cli");
+const WebCrawler = require("./src/modules/crawler");
+const CommandLineInterface = require("./src/modules/cli");
 
-console.log("Starting Crawler..");
+console.log("Starting Web Crawler..");
 
-const cli = new CLI();
-const crawler = new Crawler(`src/database/${cli.getArguments().db}`, cli.getArguments().url);
+const commandLineInterface = new CommandLineInterface();
+const webCrawler = new WebCrawler(`src/database/${commandLineInterface.getArguments().databaseFile}`, commandLineInterface.getArguments().url);
 
 const visitedUrls = new Set();
-crawler.crawl(cli.getArguments().url, cli.getArguments().maxdist, 0, visitedUrls);
+webCrawler.crawl(commandLineInterface.getArguments().url, commandLineInterface.getArguments().maxDepth, 0, visitedUrls);

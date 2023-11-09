@@ -24,7 +24,7 @@ These instructions will help you set up and run the web crawler on your local ma
 1. Run the web crawler using the following command:
 
    ```bash
-   node index.js --url <initial-url> --maxdist <maximum-distance> --db <database-file-path>
+   node index.js --url <initial-url> --maxDepth <maximum-distance> --databaseFile <database-file-path>
 2. Replace "initial-url", "maximum-distance", and "database-file-path" with your desired values.
 
    Example:
