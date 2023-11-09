@@ -5,8 +5,9 @@ const fs = require("fs");
 const unfluff = require("unfluff");
 
 class Crawler {
-  constructor(dbFilePath) {
+  constructor(dbFilePath, cli_url) {
     this.dbFilePath = dbFilePath;
+    this.cli_url = cli_url
   }
 
   async crawl(url, maxdist, currentDist, visitedUrls) {
@@ -45,7 +46,7 @@ class Crawler {
         const link = $(element).attr("href");
         if (link && (link.startsWith("http") || link.startsWith("/"))) {
           const absoluteLink = link.startsWith("/") ? new URL(link, url).href : link;
-          if (absoluteLink.includes('foodsubs') && !visitedUrls.has(absoluteLink)) {
+          if (absoluteLink.includes(this.cli_url) && !visitedUrls.has(absoluteLink)) {
             promises.push(
               this.crawl(absoluteLink, maxdist, currentDist + 1, visitedUrls)
             );
