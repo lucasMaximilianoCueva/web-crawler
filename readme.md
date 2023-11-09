@@ -30,7 +30,7 @@ These instructions will help you set up and run the web crawler on your local ma
    Example:
 
    ```bash
-   node index.js --url https://foodsubs.com/ --maxdist 3 --db results.json
+   node index.js --url https://foodsubs.com/ --maxDepth 5 --databaseFile results.json
 The crawler will start and print information about each page crawled to the console. The results will also be saved in the specified JSON file.
 ### Modules
 1. crawler.js
